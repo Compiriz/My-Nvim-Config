@@ -1,6 +1,14 @@
 return {
 	"jake-stewart/multicursor.nvim",
 	branch = "1.0",
+	-- Lazy-load on first use of a multicursor shortcut; config() then binds the rest.
+	keys = {
+		{ "<c-up>", mode = { "n", "x" }, desc = "Multicursor: add above" },
+		{ "<c-down>", mode = { "n", "x" }, desc = "Multicursor: add below" },
+		{ "<leader><up>", mode = { "n", "x" }, desc = "Multicursor: add (skip above)" },
+		{ "<leader><down>", mode = { "n", "x" }, desc = "Multicursor: add (skip below)" },
+		{ "<c-q>", mode = { "n", "x" }, desc = "Multicursor: toggle" },
+	},
 	config = function()
 		local mc = require("multicursor-nvim")
 		mc.setup()
