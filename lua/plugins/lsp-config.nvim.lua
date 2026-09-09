@@ -2,6 +2,11 @@ return {
 	-- 1. Mason: Package manager for LSP servers, DAP, linters, etc.
 	{
 		"williamboman/mason.nvim",
+		opts = {
+			ui = {
+				check_outdated_packages_on_open = false,
+			},
+		},
 		config = function()
 			require("mason").setup({
 				ui = { border = "rounded" },
