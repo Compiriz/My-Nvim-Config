@@ -27,9 +27,6 @@ return {
 			diagnostics_update_in_insert = false,
 			max_name_length = 18,
 			sort_by = "insert_at_end", -- 'insert_at_end', 'insert_at_start', 'id', 'extension', 'relative_directory', 'directory', 'modification_time', 'name'
-			close_command = function(n)
-				require("bufferline").close_buffer(n)
-			end,
 			right_mouse_command = "bdelete! %d",
 			left_mouse_command = "buffer %d",
 			indicator = {
