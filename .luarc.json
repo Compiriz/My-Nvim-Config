@@ -1,6 +1,11 @@
 {
-    "diagnostics.globals": [
-        "vim",
-        "let"
-    ]
+    "$schema": "https://json.schemastore.org/luarc.json",
+    "runtime": {
+        "version": "LuaJIT"
+    },
+    "diagnostics": {
+        "globals": [
+            "vim"
+        ]
+    }
 }
