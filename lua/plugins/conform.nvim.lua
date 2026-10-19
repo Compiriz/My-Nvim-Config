@@ -2,7 +2,7 @@ return {
 	"stevearc/conform.nvim",
 	-- Lazy load on save or command
 	event = "BufWritePre",
-	cmd = { "ConformInfo" },
+	cmd = { "Conform", "ConformInfo" },
 	-- Use opts instead of config
 	opts = {
 		formatters_by_ft = {
