@@ -4,6 +4,18 @@ return {
 		"rcarriga/nvim-dap-ui",
 		"nvim-neotest/nvim-nio",
 	},
+	-- Lazy-load on first use of a debug keymap or Dap command (keeps startup fast)
+	keys = {
+		{ "<leader><C-F8>", desc = "Toggle Breakpoint" },
+		{ "<leader>F8", desc = "Continue" },
+		{ "<leader>Fn", desc = "Step Over" },
+		{ "<leader>Fm", desc = "Step Into" },
+		{ "<leader>Fo", desc = "Step Out" },
+		{ "<leader>Fc", desc = "Clear All Breakpoints" },
+		{ "<leader>Fu", desc = "Toggle DAP UI" },
+		{ "<leader>Fv", desc = "Open REPL" },
+	},
+	cmd = { "DapContinue", "DapToggleBreakpoint", "DapStop", "DapTerminate" },
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
