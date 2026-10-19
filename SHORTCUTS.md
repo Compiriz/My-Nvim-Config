@@ -123,7 +123,7 @@ Inside a picker: `?` (normal) / `<C-/>` (insert) shows all picker actions.
 
 | Key | Action |
 | --- | --- |
-| `<C-n>` | Toggle filesystem tree (reveals current file, left side) |
+| `<C-e>` | Toggle filesystem tree (reveals current file, left side) — `<C-n>` is kept by hover.nvim |
 | `<leader>sg` | Floating `git_status` view |
 
 ---
