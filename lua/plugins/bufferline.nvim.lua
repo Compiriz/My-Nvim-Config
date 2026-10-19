@@ -4,6 +4,9 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	event = "BufReadPost",
 	keys = {
+		-- IDE-style switchers (fuzzy windows; :Telescope lazy-loads on demand)
+		{ "<C-Tab>", "<cmd>Telescope buffers<cr>", desc = "Switch buffer (fuzzy)" },
+		{ "<C-S-Tab>", "<cmd>Telescope oldfiles<cr>", desc = "Recent files (fuzzy)" },
 		{ "<leader>bn", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
 		{ "<leader>bp", "<cmd>BufferLineCyclePrev<cr>", desc = "Previous Buffer" },
 		{ "<leader>WA", "<cmd>BufferLineClose<cr>", desc = "Close Buffer" },

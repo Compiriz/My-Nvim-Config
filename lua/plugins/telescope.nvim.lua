@@ -7,6 +7,7 @@ return {
 			-- optional but recommended
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
+		cmd = { "Telescope" }, -- so `:Telescope ...` commands lazy-load the plugin
 		config = function()
 			local builtin = require("telescope.builtin")
 
