@@ -8,7 +8,7 @@ return {
 	},
 	keys = {
 		{ "<C-n>", desc = "Toggle file explorer" },
-		{ "<leader>s", desc = "Git status (float)" },
+		{ "<leader>sg", desc = "Git status (float)" },
 	},
 	cmd = { "Neotree" },
 	opts = {
@@ -26,7 +26,7 @@ return {
 			silent = true,
 			noremap = true,
 		})
-		vim.keymap.set("n", "<leader>s", ":Neotree float git_status<CR>", {
+		vim.keymap.set("n", "<leader>sg", ":Neotree float git_status<CR>", {
 			desc = "Git status (float)",
 			silent = true,
 			noremap = true,
