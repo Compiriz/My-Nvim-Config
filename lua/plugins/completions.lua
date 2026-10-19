@@ -40,7 +40,7 @@ return {
 				["<C-b>"] = cmp.mapping.scroll_docs(-4), -- Scroll docs up
 				["<C-f>"] = cmp.mapping.scroll_docs(4), -- Scroll docs down
 				["<C-Space>"] = cmp.mapping.complete(), -- Force open menu
-				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept selection
+				["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }), -- Accept selection
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
