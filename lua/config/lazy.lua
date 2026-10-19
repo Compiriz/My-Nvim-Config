@@ -15,9 +15,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- mapleader is already set in config/options.lua (loaded before this file).
--- maplocalleader must be set before loading lazy.nvim so that mappings are correct.
-vim.g.maplocalleader = "\\"
+-- mapleader / maplocalleader are set in config/options.lua (loaded first).
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -25,6 +23,8 @@ require("lazy").setup({
 		-- import your plugins
 		{ import = "plugins" },
 	},
-	-- automatically check for plugin updates
+	-- colorscheme loaded during first-time plugin installation (avoids highlight errors)
+	install = { colorscheme = { "habamax" } },
+	-- automatically check for plugin updates (kept off)
 	checker = { enabled = false },
 })
