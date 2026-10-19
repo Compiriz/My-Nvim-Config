@@ -24,7 +24,7 @@ return {
 		options = {
 			mode = "buffers", -- 'buffers' or 'tabs'
 			separator_style = "slant", -- 'slant', 'padded_slant', 'slope', 'padded_slope', 'thick', 'thin', 'rounded', 'arrow', 'arrow_trunc'
-			show_buffer_close_icons = true,
+			show_buffer_close_icons = false,
 			auto_hide = false, -- hide tabline when only 1 buffer
 			diagnostics = "nvim_lsp", -- or 'coc', 'alexherbo2/nvim-diagnostic', 'nvim-lightbulb'
 			diagnostics_update_in_insert = false,
@@ -38,7 +38,7 @@ return {
 			},
 			buffer_close_icon = "",
 			modified_icon = "●",
-			close_icon = "",
+			close_icon = "X",
 			left_trunc_marker = "",
 			right_trunc_marker = "",
 			diagnostics_indicator = function(count, level, diagnostics_dict, context)
