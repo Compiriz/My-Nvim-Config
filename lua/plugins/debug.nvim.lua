@@ -5,12 +5,15 @@ return {
 		"nvim-neotest/nvim-nio",
 	},
 	-- Lazy-load on first use of a debug keymap or Dap command (keeps startup fast)
+	-- Keys with a command run immediately on the first press (they trigger the
+	-- plugin load and execute the command). Fc/Fu/Fv have no :Dap command, so
+	-- their first press only loads the plugin.
 	keys = {
-		{ "<leader><C-F8>", desc = "Toggle Breakpoint" },
-		{ "<leader>F8", desc = "Continue" },
-		{ "<leader>Fn", desc = "Step Over" },
-		{ "<leader>Fm", desc = "Step Into" },
-		{ "<leader>Fo", desc = "Step Out" },
+		{ "<leader><C-F8>", "<cmd>DapToggleBreakpoint<cr>", desc = "Toggle Breakpoint" },
+		{ "<leader>F8", "<cmd>DapContinue<cr>", desc = "Continue" },
+		{ "<leader>Fn", "<cmd>DapStepOver<cr>", desc = "Step Over" },
+		{ "<leader>Fm", "<cmd>DapStepInto<cr>", desc = "Step Into" },
+		{ "<leader>Fo", "<cmd>DapStepOut<cr>", desc = "Step Out" },
 		{ "<leader>Fc", desc = "Clear All Breakpoints" },
 		{ "<leader>Fu", desc = "Toggle DAP UI" },
 		{ "<leader>Fv", desc = "Open REPL" },

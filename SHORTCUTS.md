@@ -185,6 +185,10 @@ Inside a picker: `?` (normal) / `<C-/>` (insert) shows all picker actions.
 | `<leader>Fu` | Toggle DAP UI |
 | `<leader>Fv` | Open REPL |
 
+> The debug plugin lazy-loads on first use: the first press of `<leader>Fc`,
+> `<leader>Fu` or `<leader>Fv` only loads it (no `:Dap` command exists for
+> them) — the other debug keys act immediately.
+
 ---
 
 ## Commands

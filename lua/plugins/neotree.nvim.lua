@@ -6,9 +6,11 @@ return {
 		"MunifTanjim/nui.nvim",
 		"nvim-tree/nvim-web-devicons", -- optional, but recommended
 	},
+	-- Mappings are set here (not in a config fn) so the FIRST press works:
+	-- the key triggers the plugin load and immediately runs the command.
 	keys = {
-		{ "<C-n>", desc = "Toggle file explorer" },
-		{ "<leader>sg", desc = "Git status (float)" },
+		{ "<C-n>", "<cmd>Neotree filesystem reveal toggle left<cr>", desc = "Toggle file explorer" },
+		{ "<leader>sg", "<cmd>Neotree float git_status<cr>", desc = "Git status (float)" },
 	},
 	cmd = { "Neotree" },
 	opts = {
@@ -20,16 +22,4 @@ return {
 			},
 		},
 	},
-	config = function()
-		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal toggle left<CR>", {
-			desc = "Toggle file explorer",
-			silent = true,
-			noremap = true,
-		})
-		vim.keymap.set("n", "<leader>sg", ":Neotree float git_status<CR>", {
-			desc = "Git status (float)",
-			silent = true,
-			noremap = true,
-		})
-	end,
 }
