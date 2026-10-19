@@ -3,9 +3,9 @@ return {
 	{
 		"lewis6991/hover.nvim",
 		dependencies = { "neovim/nvim-lspconfig" },
-		event = "VeryLazy", -- Loaded immediately
+		event = "VeryLazy", -- loaded last (after all other plugins), keeps startup fast
 		config = function()
-			require("hover").setup({
+			require("hover").config({
 				-- Core providers to check for hover info
 				providers = {
 					"hover.providers.diagnostic", -- Show diagnostics (errors/warnings)
@@ -44,12 +44,13 @@ return {
 				require("hover").enter()
 			end, { desc = "Enter Hover", silent = true })
 
-			-- C-p / C-o: Switch between providers (e.g., LSP -> Diagnostic)
+			-- C-p / C-n: Switch between providers (e.g., LSP -> Diagnostic)
+			-- (C-o is left free for Neovim's built-in "jump to previous position")
 			km("n", "<C-p>", function()
 				require("hover").switch("previous")
 			end, { desc = "Hover: Previous Source", silent = true })
 
-			km("n", "<C-o>", function()
+			km("n", "<C-n>", function()
 				require("hover").switch("next")
 			end, { desc = "Hover: Next Source", silent = true })
 		end,
